@@ -5,7 +5,7 @@ using namespace std;
 // Клас Кімната
 class Room {
 private:
-    double area;  // площа кімнати
+    double area;  
 
 public:
     Room(double a = 0) : area(a) {}
@@ -22,9 +22,9 @@ public:
 // Клас Однокімнатна Квартира
 class OneRoomApartment {
 protected:
-    Room room;         // кімната
-    double kitchenArea; // площа кухні
-    int floor;         // поверх
+    Room room;         
+    double kitchenArea; 
+    int floor;         
 
 public:
     OneRoomApartment(double roomArea = 0, double kitchen = 0, int fl = 0)
@@ -76,7 +76,6 @@ public:
     }
 };
 
-// Тестування
 int main() {
     CityOneRoomApartment apt(18.5, 6.2, 3, "Київ");
     apt.print();

@@ -2,7 +2,6 @@
 #include <string>
 using namespace std;
 
-// === Базовий клас: Студент ===
 class Student {
 protected:
     string lastName;
@@ -12,32 +11,27 @@ protected:
     string idNumber;
 
 public:
-    // Конструктор за замовчуванням
     Student() : lastName(""), firstName(""), patronymic(""), course(0), idNumber("000000") {}
 
     // Конструктор з параметрами
     Student(string ln, string fn, string pn, int c, string id)
         : lastName(ln), firstName(fn), patronymic(pn), course(c), idNumber(id) {}
 
-    // Віртуальний деструктор
     virtual ~Student() {
         cout << "Видалення об'єкта Student\n";
     }
 
-    // Віртуальна функція друку
     virtual void print() const {
         cout << "Студент: " << lastName << " " << firstName << " " << patronymic << endl;
         cout << "Курс: " << course << ", ІД: " << idNumber << endl;
     }
 };
 
-// === Похідний клас: Студент-дипломник ===
 class GraduateStudent : public Student {
 private:
     string diplomaTopic;
 
 public:
-    // Конструктор за замовчуванням
     GraduateStudent() : Student(), diplomaTopic("Невідома тема") {}
 
     // Конструктор з усіма параметрами
@@ -47,12 +41,10 @@ public:
     // Конструктор лише з темою диплома
     GraduateStudent(string topic) : Student(), diplomaTopic(topic) {}
 
-    // Деструктор
     ~GraduateStudent() {
         cout << "Видалення об'єкта GraduateStudent\n";
     }
 
-    // Перевизначена функція друку
     void print() const override {
         Student::print();
         cout << "Тема диплома: " << diplomaTopic << endl;
@@ -69,7 +61,6 @@ public:
     }
 };
 
-// === Тестування ===
 int main() {
     cout << "=== Тестування Student ===\n";
     Student s1("Іваненко", "Іван", "Іванович", 2, "123456");

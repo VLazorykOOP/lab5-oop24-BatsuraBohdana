@@ -2,7 +2,6 @@
 #include <string>
 using namespace std;
 
-// Клас Кімната
 class Room {
 private:
     double area;  
@@ -19,7 +18,6 @@ public:
     }
 };
 
-// Клас Однокімнатна Квартира
 class OneRoomApartment {
 protected:
     Room room;         
